@@ -1,11 +1,14 @@
 import UIKit
 
 class SpyAppViewController: UIViewController {
-
+    
+    // UI
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var secret: UITextField!
     @IBOutlet weak var output: UILabel!
-
+    
+    
+    
     let factory = CipherFactory()
     var cipher: Cipher?
 
@@ -36,6 +39,20 @@ class SpyAppViewController: UIViewController {
             output.text = "Error encoding"
         }
     }
+    
+    
+    @IBAction func decodeButtonPressed(_ sender: UIButton) {
+        guard let cipher = self.cipher else {
+            output.text = "No cipher selected"
+            return
+        }
+        if let decoded = cipher.decode(plaintext, secret: secretText) {
+            output.text = decoded
+        } else {
+            output.text = "Error decoding"
+        }
+    }
+    
 
     @IBAction func cipherButtonPressed(_ sender: UIButton) {
         guard
