@@ -59,19 +59,19 @@
                                     <action selector="cipherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZID-fk-SIM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsX-8Z-NWz">
-                                <rect key="frame" x="73" y="96" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="cipherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ju8-Vb-tuZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZT-fe-tOy">
                                 <rect key="frame" x="309" y="143" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Decode"/>
                                 <connections>
                                     <action selector="decodeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24S-bo-OWw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsX-8Z-NWz">
+                                <rect key="frame" x="100" y="96" width="95" height="30"/>
+                                <state key="normal" title="Alphanumeric"/>
+                                <connections>
+                                    <action selector="cipherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ju8-Vb-tuZ"/>
                                 </connections>
                             </button>
                         </subviews>
