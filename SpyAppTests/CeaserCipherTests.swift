@@ -23,6 +23,14 @@ class CeaserCipherTests: XCTestCase {
 
         XCTAssertNil(result)
     }
+    
+    func test_DecodeAndEndcodeWithSpace(){
+        let plaintext = "sports"
+        
+        let encodeText = cipher.encode(plaintext, secret: "2")
+        let result = cipher.decode(encodeText!, secret: "2")
+        XCTAssertEqual(plaintext, result)
+    }
 
 
 }

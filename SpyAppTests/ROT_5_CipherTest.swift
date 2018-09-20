@@ -36,5 +36,13 @@ class ROT_5_CipherTest: XCTestCase {
         XCTAssertEqual(result, "Error: Input String Cannot contain space")
     }
     
+    func test_DecodeAndEndcodeWithSpace(){
+        let plaintext = "hello"
+        
+        let encodeText = cipher.encode(plaintext, secret: "2")
+        let result = cipher.decode(encodeText!, secret: "4")
+        XCTAssertEqual(plaintext, result)
+    }
+    
     
 }

@@ -37,4 +37,13 @@ class AlphanumericCesarCipherTest: XCTestCase {
         XCTAssertEqual(result, "Error: Input Contains Invalid Charactors")
     }
     
+    func test_DecodeAndEndcodeWithSpace(){
+        let plaintext = "sports"
+        
+        let encodeText = cipher.encode(plaintext, secret: "2")
+        let result = cipher.decode(encodeText!, secret: "2")
+        XCTAssertEqual("SPORTS", result)
+    }
+    
+    
 }
