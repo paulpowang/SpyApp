@@ -104,3 +104,124 @@ struct AlphanumericCesarCipher: Cipher {
     }
     
 }
+
+
+//shift everything 13 to right, limit between acsii code 48~126
+struct ROT_13_Cipher: Cipher {
+    func encode(_ plaintext: String, secret: String) -> String? {
+        
+        
+        var encoded = ""
+        
+        for character in plaintext {
+            
+            
+            let unicode = character.unicodeScalars.first!.value
+            
+            var shiftedUnicode = unicode + 13
+            
+            
+            if shiftedUnicode > 126 {
+                shiftedUnicode = shiftedUnicode - 79
+            }
+            
+            
+            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+            encoded = encoded + shiftedCharacter
+            
+            
+            
+            
+        }
+        return encoded
+    }
+    
+    func decode(_ plaintext: String, secret: String) -> String? {
+        
+        var decode = ""
+        
+        for character in plaintext {
+            
+            let unicode = character.unicodeScalars.first!.value
+            
+            var shiftedUnicode = unicode - 13
+            
+            
+            if shiftedUnicode < 48{
+                shiftedUnicode = shiftedUnicode + 79
+            }
+            
+            
+            
+                
+            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+                
+            
+            decode = decode + shiftedCharacter
+        }
+        return decode
+    }
+    
+    
+    
+}
+
+//shift everything 5 to left, limit between acsii code 48~126
+struct ROT_5_Cipher: Cipher {
+    func encode(_ plaintext: String, secret: String) -> String? {
+        
+        
+        var encoded = ""
+        
+        for character in plaintext {
+            
+            
+            let unicode = character.unicodeScalars.first!.value
+            
+            var shiftedUnicode = unicode - 5
+            
+            
+            if shiftedUnicode < 48{
+                shiftedUnicode = shiftedUnicode + 79
+            }
+            
+            
+            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+            encoded = encoded + shiftedCharacter
+            
+            
+            
+            
+        }
+        return encoded
+    }
+    
+    func decode(_ plaintext: String, secret: String) -> String? {
+        
+        var decode = ""
+        
+        for character in plaintext {
+            
+            let unicode = character.unicodeScalars.first!.value
+            
+            var shiftedUnicode = unicode + 5
+            
+            
+            
+            if shiftedUnicode > 126 {
+                shiftedUnicode = shiftedUnicode - 79
+            }
+            
+            
+            
+            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+            
+            
+            decode = decode + shiftedCharacter
+        }
+        return decode
+    }
+    
+    
+    
+}
