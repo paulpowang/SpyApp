@@ -16,6 +16,9 @@
 		970E4DF52138FC0B00BA3EE9 /* CeaserCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E4DF42138FC0B00BA3EE9 /* CeaserCipher.swift */; };
 		978590D1214B5C350052D920 /* CeaserCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978590D0214B5C350052D920 /* CeaserCipherTests.swift */; };
 		97CA94A82142334600902499 /* CipherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CA94A72142334600902499 /* CipherFactory.swift */; };
+		DA75A2092153610B00E28E1A /* AlphanumericCesarCipherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75A2082153610B00E28E1A /* AlphanumericCesarCipherTest.swift */; };
+		DA75A20B2153613100E28E1A /* ROT_13_CipherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75A20A2153613100E28E1A /* ROT_13_CipherTest.swift */; };
+		DA75A20D2153615500E28E1A /* ROT_5_CipherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75A20C2153615500E28E1A /* ROT_5_CipherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		970E4DF42138FC0B00BA3EE9 /* CeaserCipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeaserCipher.swift; sourceTree = "<group>"; };
 		978590D0214B5C350052D920 /* CeaserCipherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeaserCipherTests.swift; sourceTree = "<group>"; };
 		97CA94A72142334600902499 /* CipherFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherFactory.swift; sourceTree = "<group>"; };
+		DA75A2082153610B00E28E1A /* AlphanumericCesarCipherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphanumericCesarCipherTest.swift; sourceTree = "<group>"; };
+		DA75A20A2153613100E28E1A /* ROT_13_CipherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROT_13_CipherTest.swift; sourceTree = "<group>"; };
+		DA75A20C2153615500E28E1A /* ROT_5_CipherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROT_5_CipherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 				970E4DE92138EC8700BA3EE9 /* SpyAppTests.swift */,
 				978590D0214B5C350052D920 /* CeaserCipherTests.swift */,
 				970E4DEB2138EC8700BA3EE9 /* Info.plist */,
+				DA75A2082153610B00E28E1A /* AlphanumericCesarCipherTest.swift */,
+				DA75A20A2153613100E28E1A /* ROT_13_CipherTest.swift */,
+				DA75A20C2153615500E28E1A /* ROT_5_CipherTest.swift */,
 			);
 			path = SpyAppTests;
 			sourceTree = "<group>";
@@ -217,7 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA75A20B2153613100E28E1A /* ROT_13_CipherTest.swift in Sources */,
+				DA75A20D2153615500E28E1A /* ROT_5_CipherTest.swift in Sources */,
 				970E4DEA2138EC8700BA3EE9 /* SpyAppTests.swift in Sources */,
+				DA75A2092153610B00E28E1A /* AlphanumericCesarCipherTest.swift in Sources */,
 				978590D1214B5C350052D920 /* CeaserCipherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -40,7 +40,11 @@ struct CeaserCipher: Cipher {
     
     
 }
-
+//will only accept a to z, A to Z, 0 to 9
+//return only uppercase
+//decode will only return uppercase
+//secret cannot accept other than number
+//decode can accept lowercase
 struct AlphanumericCesarCipher: Cipher {
     
     func encode(_ plaintext: String, secret: String) -> String? {
@@ -52,6 +56,10 @@ struct AlphanumericCesarCipher: Cipher {
         for character in newplaintext {
             
             let unicode = character.unicodeScalars.first!.value
+            if (unicode < 48 || unicode > 122 || (unicode > 57 && unicode < 65) || (unicode > 90 && unicode < 97)) {
+                return "Error: Input Contains Invalid Charactors"
+            }
+            
             
             var shiftedUnicode = unicode + shiftBy
             
@@ -107,6 +115,8 @@ struct AlphanumericCesarCipher: Cipher {
 
 
 //shift everything 13 to right, limit between acsii code 48~126
+//it will allow space " "
+//secret doesn't use, can accept any input
 struct ROT_13_Cipher: Cipher {
     func encode(_ plaintext: String, secret: String) -> String? {
         
@@ -146,16 +156,17 @@ struct ROT_13_Cipher: Cipher {
             
             var shiftedUnicode = unicode - 13
             
+            var shiftedCharacter: String
             
             if shiftedUnicode < 48{
                 shiftedUnicode = shiftedUnicode + 79
             }
             
-            
-            
-                
-            let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
-                
+            if unicode == 45{
+                shiftedCharacter = " "
+            }else{
+                shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
+            }
             
             decode = decode + shiftedCharacter
         }
@@ -167,6 +178,8 @@ struct ROT_13_Cipher: Cipher {
 }
 
 //shift everything 5 to left, limit between acsii code 48~126
+//it will not allow space
+//secret doesn't use, can accept any input
 struct ROT_5_Cipher: Cipher {
     func encode(_ plaintext: String, secret: String) -> String? {
         
@@ -176,7 +189,13 @@ struct ROT_5_Cipher: Cipher {
         for character in plaintext {
             
             
+            
             let unicode = character.unicodeScalars.first!.value
+            if unicode == 32 {
+                return "Error: Input String Cannot contain space"
+            }else if unicode < 48{
+                return "Error: Input Contains Invalid Charactors"
+            }
             
             var shiftedUnicode = unicode - 5
             
@@ -203,6 +222,11 @@ struct ROT_5_Cipher: Cipher {
         for character in plaintext {
             
             let unicode = character.unicodeScalars.first!.value
+            if unicode == 32 {
+                return "Error: Input String Cannot contain space"
+            }else if unicode < 48{
+                return "Error: Input Contains Invalid Charactors"
+            }
             
             var shiftedUnicode = unicode + 5
             
@@ -211,7 +235,6 @@ struct ROT_5_Cipher: Cipher {
             if shiftedUnicode > 126 {
                 shiftedUnicode = shiftedUnicode - 79
             }
-            
             
             
             let shiftedCharacter = String(UnicodeScalar(UInt8(shiftedUnicode)))
