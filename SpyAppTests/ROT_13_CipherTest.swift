@@ -19,16 +19,16 @@ class ROT_13_CipherTest: XCTestCase {
     }
     
     func test_oneCharacterStirngGetsMappedToSelfWith_0_secret() {
-        let plaintext = "A"
         
+        let plaintext = "A"
         let result = cipher.encode(plaintext, secret: "0")
         
         XCTAssertEqual("N", result)
     }
     
     func test_DecodeAndEndcodeWithSpace(){
-        let plaintext = "I like playing sports"
         
+        let plaintext = "I like playing sports"
         let encodeText = cipher.encode(plaintext, secret: "2")
         let result = cipher.decode(encodeText!, secret: "4")
         XCTAssertEqual(plaintext, result)
